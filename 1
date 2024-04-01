@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Source directory where all the files are located
+source_dir="/home/student/DirectoryStructureLab"
+
+# Move files to their respective directories based on filename patterns
+for file in "$source_dir"/*; do
+    if [[ $file == *"Bill's Repair Shop Contact info.txt" ]]; then
+        mv "$file" "$source_dir/Accounting/Accounts Receivable/"
+    elif [[ $file == *"Francine's Catering Service.txt" ]]; then
+        mv "$file" "$source_dir/Accounting/Accounts Receivable/"
+    elif [[ $file == *"Inventory List.txt" ]]; then
+        mv "$file" "$source_dir/Accounting/Inventory/"
+    elif [[ $file == *"Employee Contact Info.txt" ]]; then
+        mv "$file" "$source_dir/HR/Employees/"
+    elif [[ $file == *"Francine's Catering Service.txt" ]]; then
+        mv "$file" "$source_dir/Legal/Contracts/"
+    # Add more conditions for other files as needed
+    else
+        echo "File not matched: $file"
+    fi
+done
